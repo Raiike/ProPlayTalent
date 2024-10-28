@@ -19,7 +19,7 @@ app.use(managerRouter)
 app.use(adminRouter)
 
 app.listen(process.env.PORT, (err)=>{
-    if (err) {s
+    if (err) {
         console.log(err);
     }else{
         console.log("connecté au serveur");
