@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+{% block style %}
+    <link rel="stylesheet" href="/assets/css/register.css">
+{% endblock %}
+{% block main %}
+        <form action="" id="middle-form">
+            <div id="bg-classic-form">
+                <div id="wru">
+                    <h2>REGISTER</h2>
+                    <p>Etes-vous?</p>
+                </div>
+                <div id="aesthetic-center-place">
+                    <div id="playerIMG-container">
+                        <h3>Un joueur?</h3>
+                    <a href="/playerRegister"><img id="playerIMG" class="imgExample" src="assets/img/player.png" alt=""></a>
+                    </div>
+                    <div id="managerIMG-container">
+                        <h3>Un Manager?</h3>
+                        <a href="/managerRegister"><img id="managerIMG" class="imgExample" src="assets/img/manager.png" alt=""></a>
+                    </div>
+                </div>
+                <div id="alreadyLog">
+                    <p>Vous avez dejà un compte?</p><a href="/login" id="login" >Connectez-vous!</a>
+                </div>
+            </div>
+        </form>
+{% endblock %}

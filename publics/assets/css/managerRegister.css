@@ -1,0 +1,137 @@
+/* Styles globaux */
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+/* Formulaire */
+form {
+    background-color: #252525;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%; /* Augmente la largeur sur mobile */
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Titres */
+h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Container des informations du manager */
+#manager-infos-container {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+#manager-leftinfos-container, #manager-rightinfos-container {
+    width: 48%;
+}
+
+/* Champs de formulaire */
+.manager-form-group {
+    margin-bottom: 18px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #ddd;
+    text-align: center;
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], 
+input[type="tel"], input[type="file"], select {
+    width: 100%;
+    padding: 12px;
+    height: 44px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #f7f7f7;
+    color: #555;
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Bouton de soumission */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #a92ae4;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #AF08FD;
+}
+
+/* Container du bouton */
+#manager-nextButt-container {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive design pour écrans plus petits */
+@media (max-width: 768px) {
+    /* Réduit la taille des titres */
+    h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* Formulaire ajusté pour petits écrans */
+    form {
+        padding: 20px;
+        width: 90%;
+    }
+
+    /* Container des informations en une seule colonne */
+    #manager-infos-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #manager-leftinfos-container, #manager-rightinfos-container {
+        width: 100%;
+    }
+
+    /* Bouton ajusté */
+    button {
+        padding: 12px;
+        font-size: 15px;
+    }
+}

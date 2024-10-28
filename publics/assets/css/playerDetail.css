@@ -1,0 +1,223 @@
+/* Styles globaux */
+body {
+    background-color: #121212;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Détails du joueur */
+.player-detail {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    color: #ffffff;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-detail:hover {
+    transform: scale(1.02);
+}
+
+/* Titre */
+h1 {
+    text-align: center;
+    color: #AF08FD;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Image du joueur */
+.player-photo-detail {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #AF08FD;
+    margin: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.player-photo-detail:hover {
+    transform: scale(1.1);
+}
+
+/* Formulaire */
+form {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Étiquettes et informations */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #AF08FD;
+}
+
+/* Inputs */
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    background-color: #333333;
+    color: #ffffff;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
+}
+
+input[type="text"]:focus {
+    border-color: #AF08FD;
+    outline: none;
+}
+
+/* Boutons */
+.edit-button {
+    background-color: #AF08FD;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.edit-button:hover {
+    background-color: #AF08FD;
+    transform: translateY(-2px);
+}
+
+/* Affichage des informations */
+.info {
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #292929;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+
+.info-item:hover {
+    background: #3c3c3c;
+}
+
+.info-item strong {
+    color: #ff6f61;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .player-detail {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .player-photo-detail {
+        width: 120px;
+        height: 120px;
+    }
+
+    input[type="text"] {
+        font-size: 14px;
+    }
+
+    .edit-button {
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .player-detail {
+        width: 90%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .player-photo-detail {
+        width: 100px;
+        height: 100px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .edit-button {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+}
+
+/* Styles pour les boutons */
+#toggle-edit {
+    background-color: #AF08FD;
+}
+
+#confirm-edit {
+    background-color: #4CAF50;
+}
+
+#confirm-edit:hover {
+    background-color: #45a049;
+}
+
+#confirm-edit {
+    display: none;
+}
+
+.info-input {
+    transition: all 0.3s ease;
+}
+
+select {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    background-color: #333333;
+    color: #ffffff;
+    transition: border-color 0.3s;
+    margin-bottom: 15px;
+}
+
+select:focus {
+    border-color: #AF08FD;
+    outline: none;
+}
+
+select option {
+    background-color: #333333;
+    color: #ffffff;
+}

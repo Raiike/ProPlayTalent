@@ -1,0 +1,67 @@
+{% extends "base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+{% endblock %}
+
+{% block main %}
+
+    <div class="dashboard">
+
+        <!-- Barre de recherche -->
+        <form id="searchForm" action="/dashboard" method="GET" class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search player..." name="search" value="{{ search }}" />
+            <select name="gameCategory">
+                <option value="all" {% if gameCategory == 'all' %}selected{% endif %}>All Categories</option>
+                <option value="FPS" {% if gameCategory == 'FPS' %}selected{% endif %}>FPS</option>
+                <option value="MOBA" {% if gameCategory == 'MOBA' %}selected{% endif %}>MOBA</option>
+                <!-- Ajoute d'autres catégories si nécessaire -->
+            </select>
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Liste des joueurs -->
+        <div class="players-list">
+            {% for player in players %}
+                <a href="/player/{{ player._id }}" class="player-card-link">
+                    <div class="player-card">
+                        <div class="player-header">
+                            <img src="{{ player.photo }}" alt="Photo de {{ player.firstname }}" class="player-photo">
+                            <img src="/assets/img/{{ player.nationality }}.png" alt="Drapeau de {{ player.nationality }}" class="nationality-flag">
+                        </div>
+                        <div class="player-info">
+                            <h2>{{ player.username }}</h2>
+                            <p>{{ player.gameCategory }} SPECIALIST</p>
+                            {% if user.role == 'manager' %}
+                                <p>{{ player.firstname }} {{ player.lastname }}</p>
+                                <p>email : {{ player.email }}</p>
+                            {% endif %}
+                            <p>Âge : {{ player.age }}</p>
+                        </div>
+                        <div class="earnings-section">
+                            <div class="earnings-label">EARNINGS</div>
+                            <div class="player-earnings">{{ player.earnings }} $</div>
+                        </div>
+                        <div class="more-info">More Info</div>
+                        {% if user.role == 'admin' %}
+                            <form action="player/{{ player._id }}/delete" method="POST" style="display:inline;">
+                                <button type="submit" class="delete-button">Supprimer</button>
+                            </form>
+                        {% endif %}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            {% if currentPage > 1 %}
+                <a href="?page={{ currentPage - 1 }}&search={{ search }}&gameCategory={{ gameCategory }}">Précédent</a>
+            {% endif %}
+            <span>Page {{ currentPage }} sur {{ totalPages }}</span>
+            {% if currentPage < totalPages %}
+                <a href="?page={{ currentPage + 1 }}&search={{ search }}&gameCategory={{ gameCategory }}">Suivant</a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

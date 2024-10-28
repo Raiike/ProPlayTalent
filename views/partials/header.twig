@@ -1,0 +1,31 @@
+{% block style %}
+    <link rel="stylesheet" href="/assets/css/header.css">
+{% endblock %}
+
+<header>
+ {% if user %}
+    <div class="logo-container">
+        <a href="/logout">
+            <img id="logoPPT" src="/assets/img/logoPPT.png" alt="">
+        </a>
+    </div>
+ {% endif %}
+    <h1>
+        <a href="/logout">
+            <img src="/assets/img/title.png" alt="">
+        </a>
+    </h1>
+
+    {% if user %}
+        <div class="user-profile">
+            {% if user.role != 'admin' %}
+                <a href="/player/{{ user._id }}">
+                    <img src="{{ user.photo }}" alt="Photo de profil" class="profile-photo" onerror="this.onerror=null;this.src='/assets/img/default-profile.png';" />
+                </a>
+            {% endif %}
+            <a href="/logout" id="logoutLogo">
+                <img src="/assets/img/disconnect.png" alt="Déconnexion" class="disconnect-icon">
+            </a>
+        </div>
+    {% endif %}
+</header>

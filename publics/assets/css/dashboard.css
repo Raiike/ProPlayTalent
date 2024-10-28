@@ -1,0 +1,223 @@
+/* Fond de page sombre avec dégradé */
+body {
+    background: linear-gradient(to bottom, #141414, #1a1a1a);
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Structure principale */
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Barre supérieure */
+.user-profile {
+    display: flex;
+    justify-content: flex-end; /* Aligne les éléments à droite */
+    margin-bottom: 20px; /* Espacement en bas */
+}
+
+/* Titre centré */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Liste des joueurs */
+.players-list {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Carte du joueur */
+.player-card {
+    position: relative;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.player-card:hover {
+    transform: scale(1.05);
+}
+
+/* Gradient sur la carte */
+.player-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #F6A355, #AF08FD);
+    opacity: 0.15;
+    z-index: -1;
+    border-radius: 15px;
+}
+
+/* Photo du joueur */
+.player-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Diminuez la marge pour réduire l'espace */
+    border: 2px solid #ffffff;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+/* Partie supérieure de la carte : photo + infos joueur */
+.player-header {
+    display: flex;
+    align-items: center; /* Aligne verticalement la photo et le drapeau */
+}
+
+/* Drapeau de nationalité */
+.nationality-flag {
+    width: 70px; /* Largeur du drapeau, ajustez selon vos besoins */
+    border-radius: 4px;
+    height: auto; /* Hauteur automatique pour garder les proportions */
+    margin-left: 180px; /* Ajoutez cette ligne pour éloigner le drapeau */
+    margin-bottom: 60px;
+}
+
+
+/* Informations du joueur */
+.player-info {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.player-info h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.player-info p {
+    font-size: 16px;
+    color: #cccccc;
+    margin: 8px 0; /* Augmentez cette marge pour plus d'espace entre les infos */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Section des gains et des détails */
+.earnings-section {
+    margin-top: 10px;
+}
+
+.earnings-label {
+    font-size: 14px;
+    color: #cccccc;
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.player-earnings {
+    font-size: 40px;
+    font-weight: 700;
+    background: linear-gradient(45deg, #F6A355, #AF08FD);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: right;
+}
+
+/* Bouton More Info */
+.more-info {
+    color: #AF08FD;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.more-info:hover {
+    text-decoration: underline;
+}
+
+/* Styles pour la barre de recherche */
+#searchForm {
+    margin-bottom: 80px;
+}
+
+.search-bar {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px; /* Espacement en bas */
+}
+
+.search-bar input[type="text"] {
+    padding: 10px; /* Espacement intérieur */
+    border: 1px solid #cccccc; /* Bordure gris clair */
+    border-radius: 5px 0 0 5px; /* Coins arrondis à gauche */
+    width: 250px; /* Largeur fixe */
+    font-size: 16px; /* Taille de la police */
+    outline: none; /* Pas de contour */
+    transition: border-color 0.3s; /* Transition douce */
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #AF08FD; /* Couleur de la bordure au focus */
+}
+
+.search-bar select {
+    padding: 10px; /* Espacement intérieur */
+    border: 1px solid #cccccc; /* Bordure gris clair */
+    border-radius: 0 5px 5px 0; /* Coins arrondis à droite */
+    font-size: 16px; /* Taille de la police */
+    outline: none; /* Pas de contour */
+}
+
+.search-bar button {
+    padding: 10px 15px; /* Espacement intérieur */
+    background-color: #AF08FD; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    margin-left: 5px; /* Réduire l'espace entre le select et le bouton */
+    transition: background-color 0.3s; /* Transition douce */
+}
+
+.search-bar button:hover {
+    background-color: #F6A355; /* Couleur au survol */
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    margin-top: 20px; /* Espacement en haut */
+}
+
+.pagination a {
+    color: #AF08FD; /* Couleur des liens */
+    margin: 0 10px; /* Espacement autour des liens */
+    text-decoration: none; /* Pas de soulignement */
+}
+
+.pagination span {
+    color: #cccccc; /* Couleur du texte */
+}

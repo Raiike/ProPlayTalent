@@ -1,0 +1,184 @@
+/* Styles globaux */
+body {
+    background: linear-gradient(to bottom, #0e0e0e, #1a1a1a);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Conteneur principal de la page */
+#mainContainer {
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px; /* Espace latéral pour petits écrans */
+}
+
+/* Conteneur de connexion */
+.login-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.login-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    color: #ff4d4d;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* Groupes de formulaires */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #bbbbbb;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555555;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.form-group input::placeholder {
+    color: #777777;
+}
+
+/* Bouton de soumission */
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #AF08FD;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #9a07e5;
+}
+
+/* Lien d'inscription ou autre */
+.login-container a {
+    display: block;
+    margin-top: 20px;
+    font-size: 12px;
+    color: #AF08FD;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+
+/* Texte "pas de compte ?" */
+#noAcc {
+    display: flex;
+    font-size: 12px;
+    margin-top: 30px;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#noAcc p, #noAcc a {
+    display: inline;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+#noAcc a {
+    color: #AF08FD;
+    text-decoration: none;
+}
+
+/* Responsive design pour écrans de moins de 768px */
+@media (max-width: 768px) {
+    /* Ajustement des marges et des paddings */
+    .login-container {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    .login-container h1 {
+        font-size: 22px;
+    }
+
+    .error-message {
+        font-size: 12px; /* Réduit la taille de l'erreur */
+    }
+
+    button[type="submit"] {
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    #noAcc {
+        font-size: 10px;
+        margin-top: 20px;
+    }
+}
+
+/* Responsive design pour écrans de moins de 480px */
+@media (max-width: 480px) {
+    /* Ajustement du texte et des éléments */
+    .login-container h1 {
+        font-size: 20px;
+    }
+
+    .form-group label, .form-group input {
+        font-size: 14px;
+    }
+
+    .form-group input {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+    }
+
+    #noAcc {
+        font-size: 9px;
+        margin-top: 15px; /* Ajuste le margin */
+    }
+
+    /* Réduire le padding du mainContainer pour les petits écrans */
+    #mainContainer {
+        padding: 0 10px; /* Réduit l'espace latéral */
+    }
+}

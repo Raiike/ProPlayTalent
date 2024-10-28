@@ -1,0 +1,90 @@
+{% extends "base.twig" %}
+
+{% block style %}
+    <link rel="stylesheet" href="/assets/css/playerDetail.css">
+{% endblock %}
+
+{% block main %}
+    <div class="player-detail">
+        <h1>Détails du joueur : {{ player.username }}</h1>
+        <img src="{{ player.photo }}" alt="Photo de {{ player.firstname }}" class="player-photo-detail">
+
+        <form action="/player/edit/{{ player._id }}" method="POST" enctype="multipart/form-data" id="player-form">
+            <div>
+                <label for="firstname">Prénom :</label>
+                <p class="info-text">{{ player.firstname }}</p>
+                <input type="text" id="firstname" name="firstname" value="{{ player.firstname }}" class="info-input" style="display:none;">
+            </div>
+
+            <div>
+                <label for="lastname">Nom :</label>
+                <p class="info-text">{{ player.lastname }}</p>
+                <input type="text" id="lastname" name="lastname" value="{{ player.lastname }}" class="info-input" style="display:none;">
+            </div>
+
+            <div>
+                <label for="age">Âge :</label>
+                <p class="info-text">{{ player.age }} ans</p>
+                <input type="text" id="age" name="age" value="{{ player.age }}" class="info-input" style="display:none;">
+            </div>
+
+            <div>
+                <label for="nationality">Nationalité :</label>
+                <p class="info-text">{{ player.nationality }}</p>
+                <input type="text" id="nationality" name="nationality" value="{{ player.nationality }}" class="info-input" style="display:none;">
+            </div>
+
+            <div>
+                <label for="phonenumber">Numéro de téléphone :</label>
+                <p class="info-text">{{ player.phonenumber }}</p>
+                <input type="text" id="phonenumber" name="phonenumber" value="{{ player.phonenumber }}" class="info-input" style="display:none;">
+            </div>
+
+            <div>
+                <label for="gameCategory">Catégorie de jeu :</label>
+                <p class="info-text">{{ player.gameCategory }}</p>
+                <select id="gameCategory" name="gameCategory" class="info-input" style="display:none;">
+                    <option value="FPS" {% if player.gameCategory == 'FPS' %}selected{% endif %}>FPS</option>
+                    <option value="FGC" {% if player.gameCategory == 'FGC' %}selected{% endif %}>FGC</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="earnings">Gains :</label>
+                <p class="info-text">{{ player.earnings }} €</p>
+                <input type="text" id="earnings" name="earnings" value="{{ player.earnings }}" class="info-input" style="display:none;">
+            </div>
+
+            {% if isCurrentUser %}
+                <button type="button" class="edit-button" id="toggle-edit">Modifier</button>
+                <button type="submit" class="edit-button" id="confirm-edit" style="display:none;">Confirmer</button>
+            {% endif %}
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('toggle-edit').addEventListener('click', function() {
+            const infoTexts = document.querySelectorAll('.info-text');
+            const infoInputs = document.querySelectorAll('.info-input');
+            const confirmButton = document.getElementById('confirm-edit');
+            const toggleButton = this;
+
+            infoTexts.forEach(text => {
+                text.style.display = text.style.display === 'none' ? 'block' : 'none';
+            });
+
+            infoInputs.forEach(input => {
+                input.style.display = input.style.display === 'none' ? 'block' : 'none';
+            });
+
+            // Changer le texte du bouton
+            if (toggleButton.innerText === 'Modifier') {
+                toggleButton.innerText = 'Annuler';
+                confirmButton.style.display = 'block';
+            } else {
+                toggleButton.innerText = 'Modifier';
+                confirmButton.style.display = 'none';
+            }
+        });
+    </script>
+{% endblock %}

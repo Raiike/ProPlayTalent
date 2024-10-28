@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../assets/fonts/Monserrat.ttf') format('truetype');
+}
+
+/* Styles globaux */
+body {
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    display: flex; /* Utilise flexbox pour aligner le contenu de h1 */
+    justify-content: center; /* Centre le contenu de h1 horizontalement */
+    align-items: center;
+    flex-grow: 1; /* Permet à h1 de prendre de l'espace disponible */
+}
+
+h1 img {
+    width: 350px; /* Largeur de l'image dans h1 */
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Espace entre le logo, le titre et le profil utilisateur */
+    align-items: center; /* Centre verticalement tous les éléments */
+    font-family: 'Montserrat';
+    padding: 30px;
+}
+
+.logo-container {
+    display: flex; /* Utilise flexbox pour aligner le logo */
+    align-items: center; /* Centre verticalement le logo */
+}
+
+#logoPPT {
+    width: 50px; /* Ajuste la taille du logo selon tes besoins */
+    height: auto; /* Garde les proportions de l'image */
+}
+
+.user-profile {
+    display: flex; /* Utilise flexbox pour aligner les éléments */
+    justify-content: flex-end; /* Aligne à droite */
+    align-items: center; /* Centre verticalement les éléments du profil */
+    gap: 20px; /* Espacement entre les éléments du profil */
+    margin-right: 15px;
+}
+
+.disconnect-icon {
+    width: 35px; /* Ajuste la taille selon tes besoins */
+    height: 35px; /* Ajuste la taille selon tes besoins */
+}
+
+.profile-photo {
+    width: 40px; /* Ajuste la taille selon tes besoins */
+    height: 40px; /* Ajuste la taille selon tes besoins */
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Assure que l'image s'adapte correctement */
+}
+
+/* Media queries pour responsive design */
+
+/* Responsive design pour écrans de moins de 768px */
+@media (max-width: 768px) {
+    header {
+        padding: 20px; /* Réduit le padding */
+    }
+
+    h1 img {
+        width: 250px; /* Réduit la taille de l'image du titre */
+    }
+
+    .user-profile {
+        gap: 15px; /* Réduit l'espacement entre les éléments du profil */
+    }
+
+    .disconnect-icon {
+        width: 30px; /* Ajuste la taille selon tes besoins */
+        height: 30px; /* Ajuste la taille selon tes besoins */
+    }
+
+    .profile-photo {
+        width: 35px; /* Réduit la taille de la photo de profil */
+        height: 35px; /* Réduit la taille de la photo de profil */
+    }
+}
+
+/* Responsive design pour écrans de moins de 480px */
+@media (max-width: 480px) {
+    header {
+        flex-direction: column; /* Aligne les éléments en colonne */
+        align-items: flex-start; /* Aligne à gauche */
+        padding: 15px; /* Réduit encore le padding */
+    }
+
+    h1 img {
+        width: 200px; /* Réduit encore la taille de l'image */
+    }
+
+    .user-profile {
+        justify-content: flex-start; /* Aligne les éléments du profil à gauche */
+        margin-right: 0; /* Retire la marge à droite */
+    }
+
+    .disconnect-icon {
+        width: 25px; /* Ajuste la taille selon tes besoins */
+        height: 25px; /* Ajuste la taille selon tes besoins */
+    }
+
+    .profile-photo {
+        width: 30px; /* Réduit la taille de la photo de profil */
+        height: 30px; /* Réduit la taille de la photo de profil */
+    }
+}
